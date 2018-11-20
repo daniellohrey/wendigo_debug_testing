@@ -6,16 +6,16 @@ import base64
 
 class Config:
 	def __init__(self):
-		self.mod = ""
-		self.config = ""
-		self.data = ""
-		self.repo = ""
-		self.usr = ""
-		self.token = ""
+		self.mod = "modules/"
+		self.config = "config/"
+		self.data = "data/"
+		self.repo = "wendigo_test"
+		self.usr = "daniellohrey"
+		self.token = "260b0c9222b125d12bb24e171a5e96136df770c3"
 		self.pk = ""
-		self.sleep = 1800
-		self.fn_s = ""
-		self.id_s = ""
+		self.sleep = 10
+		self.fn_s = "fn_seed"
+		self.id_s = "id_seed"
 		self.modules = []
 		self.tasks = Queue.Queue()
 		self.id = new_id()
@@ -57,7 +57,7 @@ class Config:
 		return
 
 	def my_token(self):
-		return fixstr(self.token)
+		return base64.b64decode(self.token)
 
 	def new_token(self, new):
 		self.token = new
@@ -89,7 +89,7 @@ class Config:
 		fn = str(i_time) + fixstr(self.fn_s)
 		return xxhash.xxh64(fn).hexdigest()
 
-	def my_com(self):
+	def com_mess(self):
 		com = str(time.time())
 		return xxhash.xxh64(com).hexdigest()
 
