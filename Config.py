@@ -12,7 +12,7 @@ class Config:
 		self.data = "data/"
 		self.repo = "wendigo_test"
 		self.usr = "daniellohrey"
-		self.token = "ZDc4ZjE5YTIwZDAzN2RiOWZhMWZhMWY3NDFhNzY4N2E1MDljODVmZg=="
+		self.token = "MmZmODE2ODZiZDBhZjc2ZTVhNDU5ZGZlZDYwOTQ0NTVlNDI2ODYxNA=="
 		self.pk = "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAndOV4VLdGZgIk+YcW7Kl\nVwiBiesJq6upfiRBo2hM5CEzQiSeBa1/A4h5ozSgQtSgKURVmlDChTNrs0P4bwvi\npCvq8B5SdBw4gcc7YTy03Hl11wfbIPCwqA9JwUl6ZzQtEbw7BAfndry44+2QmAoL\nU2uOoyW2C4MjmUG6SDmNfAL/PsMCvL4fiBJh2V2EUWtCPEqkVIGUHERFFaJwFea3\nFdIqIFVV4SzU6c73wdRFWKHie5WZ4GXQ3GaIAe2cyCMp3UavOhpk4s+N5xdG1xXs\n2AvfXuotYRVxvmSz+L0QiyTXNn0gmphLrMph3jyY/+KX4TH0wIxEx1ZK1gYO8D1V\npQIDAQAB\n-----END PUBLIC KEY-----"
 		self.pwd = "zippass"
 		self.sleep = 5
@@ -31,7 +31,7 @@ class Config:
 		return str(xxhash.xxh64(str(self.id)).hexdigest())
 
 	def my_mod(self):
-		return fixstr(self.mod)
+		return self.fixstr(self.mod)
 
 	def new_mod(self, new):
 		self.mod = new
