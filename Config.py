@@ -18,6 +18,7 @@ class Config:
 		self.sleep = 5
 		self.fn_s = "fn_seed"
 		self.id_s = "id_seed"
+		self.size = 256
 		self.tasks = Queue.Queue()
 		self.id = self.new_id()
 		self.pk = self.import_key()
@@ -81,7 +82,16 @@ class Config:
 		return
 
 	def import_key(self):
-		self.pk = RSA.importKey(self.my_pk())
+		self.pk = RSA.importKey(self.pk)
+		self.PKCS1_OAEP.new(self.pk)
+		return
+
+	def my_size(self):
+		return self.size
+
+	def new_size(self, new):
+		self.size = new
+		return
 
 	def my_pwd(self):
 		return self.fixstr(self.pwd)
